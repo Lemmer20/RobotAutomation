@@ -1,0 +1,22 @@
+Robot framework - A automation framework for Acceptance testing.
+
+
+1. Install Python - goto https://www.python.org/downloads/windows/
+   1.1 Configure the path - goto and copy the path - pyhton > scripts
+       1.1.1 Go to system virables > add path > paste the python script location
+   1.2 To check it phython already installed
+       1.2.1 open your CM (run it as administrator) then type pythong --version > it will show the installed of the python
+       1.2.2 Check the pip library - pip --version
+
+2. Install Pycharm IDE
+
+
+
+------------------------
+
+Team City 
+
+testing 1
+
+
+
