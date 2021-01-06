@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20210105 19:42:00.051" rpa="false">
+<suite id="s1" name="FT-AZ001 SearchProductAddToCart" source="C:\Users\RemmelO\Desktop\My_Files\Documentation\Robot Framework\documentation\PycharmProjects\AmazonAutomation\Scripts\Products\FT-AZ001_SearchProductAddToCart.robot">
+<test id="s1-t1" name="Search the Product">
+<kw name="Open Amazon Homepage" library="scenarioHomepage">
+<doc>This will open a browser and Amazon Homepage</doc>
+<kw name="Open Browser">
+<arguments>
+<arg>${test_envi}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210105 19:42:00.352" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20210105 19:42:00.351" endtime="20210105 19:42:00.352"></status>
+</kw>
+<status status="FAIL" starttime="20210105 19:42:00.349" endtime="20210105 19:42:00.352"></status>
+</kw>
+<doc>This will search the product and it should be redirect to the Search Result Page</doc>
+<status status="FAIL" starttime="20210105 19:42:00.348" endtime="20210105 19:42:00.352" critical="yes">No keyword with name 'Open Browser' found.</status>
+</test>
+<test id="s1-t2" name="Selecting Product and Verify it's Details">
+<kw name="Select Product in Search Results" library="scenarioSearchResults">
+<doc>This will select the product in Search Result page
+and open it on Product Details Page</doc>
+<arguments>
+<arg>${productTitle}</arg>
+<arg>${productPrice}</arg>
+</arguments>
+<kw name="wait until element is visible">
+<arguments>
+<arg>//div[@class='a-section a-spacing-medium' and contains(.,'${productTitle}') and contains(.,'${productPrice}')]</arg>
+<arg>timeout=60</arg>
+</arguments>
+<msg timestamp="20210105 19:42:00.357" level="FAIL">No keyword with name 'wait until element is visible' found.</msg>
+<status status="FAIL" starttime="20210105 19:42:00.357" endtime="20210105 19:42:00.357"></status>
+</kw>
+<status status="FAIL" starttime="20210105 19:42:00.354" endtime="20210105 19:42:00.357"></status>
+</kw>
+<doc>This will verify the details of the selected Products</doc>
+<status status="FAIL" starttime="20210105 19:42:00.354" endtime="20210105 19:42:00.358" critical="yes">No keyword with name 'wait until element is visible' found.</status>
+</test>
+<test id="s1-t3" name="Add Item to the Cart">
+<kw name="Setting Product Quantity" library="scenarioProductDetails">
+<doc>This will set the quantity to be bought</doc>
+<arguments>
+<arg>${quantity}</arg>
+</arguments>
+<kw name="wait until element is visible">
+<arguments>
+<arg>${productdetails_dropdownquantity}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<msg timestamp="20210105 19:42:00.366" level="FAIL">No keyword with name 'wait until element is visible' found.</msg>
+<status status="FAIL" starttime="20210105 19:42:00.366" endtime="20210105 19:42:00.367"></status>
+</kw>
+<status status="FAIL" starttime="20210105 19:42:00.360" endtime="20210105 19:42:00.367"></status>
+</kw>
+<doc>This will add the product to the cart
+Verify if the item is successfully added in the Shopping Cart
+And if the price and quantity is correct</doc>
+<status status="FAIL" starttime="20210105 19:42:00.359" endtime="20210105 19:42:00.367" critical="yes">No keyword with name 'wait until element is visible' found.</status>
+</test>
+<test id="s1-t4" name="Confirming Item Added in Shopping Cart">
+<kw name="Go to Shopping Cart Page" library="scenarioHomepage">
+<doc>This will go to the shopping Cart page</doc>
+<kw name="wait until element is visible">
+<arguments>
+<arg>${homepage_iconcart}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<msg timestamp="20210105 19:42:00.372" level="FAIL">No keyword with name 'wait until element is visible' found.</msg>
+<status status="FAIL" starttime="20210105 19:42:00.372" endtime="20210105 19:42:00.372"></status>
+</kw>
+<status status="FAIL" starttime="20210105 19:42:00.369" endtime="20210105 19:42:00.372"></status>
+</kw>
+<doc>This will verify if the item is confirm added to Shopping Cart</doc>
+<status status="FAIL" starttime="20210105 19:42:00.369" endtime="20210105 19:42:00.373" critical="yes">No keyword with name 'wait until element is visible' found.</status>
+</test>
+<test id="s1-t5" name="Ending Script Execution">
+<kw name="Closing Browser" library="scenarioHomepage">
+<doc>This will close the browser open</doc>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210105 19:42:02.415" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210105 19:42:00.375" endtime="20210105 19:42:02.415"></status>
+</kw>
+<kw name="Close Browser">
+<msg timestamp="20210105 19:42:02.418" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" starttime="20210105 19:42:02.418" endtime="20210105 19:42:02.418"></status>
+</kw>
+<status status="FAIL" starttime="20210105 19:42:00.374" endtime="20210105 19:42:02.418"></status>
+</kw>
+<doc>This will close all the browser and end the script execution</doc>
+<status status="FAIL" starttime="20210105 19:42:00.374" endtime="20210105 19:42:02.419" critical="yes">No keyword with name 'Close Browser' found.</status>
+</test>
+<doc>This script will search a product
+and add it to cart and verify if the item was successfully added to the cart</doc>
+<status status="FAIL" starttime="20210105 19:42:00.054" endtime="20210105 19:42:02.421"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5">Critical Tests</stat>
+<stat pass="0" fail="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="5" id="s1" name="FT-AZ001 SearchProductAddToCart">FT-AZ001 SearchProductAddToCart</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210105 19:42:00.251" level="ERROR">Error in file 'C:\Users\RemmelO\Desktop\My_Files\Documentation\Robot Framework\documentation\PycharmProjects\AmazonAutomation\Config\Setup.robot' on line 3: Importing test library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python\Scripts\robot.exe
+  c:\python\python38.zip
+  c:\python\DLLs
+  c:\python\lib
+  c:\python
+  c:\python\lib\site-packages
+  c:\python\lib\site-packages\win32
+  c:\python\lib\site-packages\win32\lib
+  c:\python\lib\site-packages\Pythonwin
+  c:\python\lib\site-packages\wx-2.8-msw-unicode</msg>
+<msg timestamp="20210105 19:42:00.341" level="ERROR">Error in file 'C:\Users\RemmelO\Desktop\My_Files\Documentation\Robot Framework\documentation\PycharmProjects\AmazonAutomation\Scenario\scenarioProductDetails.robot' on line 6: Importing test library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Python\Scripts\robot.exe
+  c:\python\python38.zip
+  c:\python\DLLs
+  c:\python\lib
+  c:\python
+  c:\python\lib\site-packages
+  c:\python\lib\site-packages\win32
+  c:\python\lib\site-packages\win32\lib
+  c:\python\lib\site-packages\Pythonwin
+  c:\python\lib\site-packages\wx-2.8-msw-unicode</msg>
+</errors>
+</robot>

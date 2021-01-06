@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.2 on win32)" generated="20200409 17:35:22.900" rpa="false">
+<suite id="s1" name="FT-AZ001 SearchProductAddToCart" source="C:\Users\Rjosh-PC\PycharmProjects\AmazonAutomation\Scripts\Products\FT-AZ001_SearchProductAddToCart.robot">
+<test id="s1-t1" name="Search the Product">
+<kw name="Open Amazon Homepage" library="scenarioHomepage">
+<doc>This will open a browser and Amazon Homepage</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${test_envi}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200409 17:35:23.304" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20200409 17:35:23.303" endtime="20200409 17:35:41.386"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200409 17:35:41.387" endtime="20200409 17:35:59.178"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${homepage_amazonlogo}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:35:59.178" endtime="20200409 17:35:59.923"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20200409 17:36:02.925" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200409 17:35:59.923" endtime="20200409 17:36:02.926"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${homepage_inputsearch}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:03.044" level="INFO">Element '//div[@id='nav-search']//input[@id='twotabsearchtextbox']' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:02.927" endtime="20200409 17:36:03.044"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${homepage_buttonsearch}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:03.079" level="INFO">Element '//div[@id='nav-search']//input[@value='Go']' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:03.045" endtime="20200409 17:36:03.079"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${homepage_dropdownfilter}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:03.090" level="INFO">Current page contains element '//div[@id='nav-search']//select[@id='searchDropdownBox']'.</msg>
+<status status="PASS" starttime="20200409 17:36:03.079" endtime="20200409 17:36:03.091"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${homepage_iconcart}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:03.114" level="INFO">Element '//div[@id='nav-tools']//a[@id='nav-cart']' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:03.091" endtime="20200409 17:36:03.114"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${homepage_iconmenu}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:03.136" level="INFO">Element '//div[@id='nav-belt']//a[@id='nav-hamburger-menu']' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:03.114" endtime="20200409 17:36:03.136"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:35:23.303" endtime="20200409 17:36:03.137"></status>
+</kw>
+<kw name="Search Products" library="scenarioHomepage">
+<doc>This will search a product</doc>
+<arguments>
+<arg>${productSearch}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${homepage_inputsearch}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:03.138" endtime="20200409 17:36:03.156"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${homepage_inputsearch}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:03.156" level="INFO">Clicking element '//div[@id='nav-search']//input[@id='twotabsearchtextbox']'.</msg>
+<status status="PASS" starttime="20200409 17:36:03.156" endtime="20200409 17:36:03.447"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200409 17:36:04.448" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200409 17:36:03.448" endtime="20200409 17:36:04.448"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${homepage_inputsearch}</arg>
+<arg>text=${product}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:04.448" level="INFO">Typing text 'mask' into text field '//div[@id='nav-search']//input[@id='twotabsearchtextbox']'.</msg>
+<status status="PASS" starttime="20200409 17:36:04.448" endtime="20200409 17:36:05.911"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${homepage_buttonsearch}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:05.913" level="INFO">Clicking element '//div[@id='nav-search']//input[@value='Go']'.</msg>
+<status status="PASS" starttime="20200409 17:36:05.912" endtime="20200409 17:36:13.521"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:15.523" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:13.522" endtime="20200409 17:36:15.523"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:03.137" endtime="20200409 17:36:15.523"></status>
+</kw>
+<kw name="Verify if the Search Results is displayed" library="scenarioSearchResults">
+<doc>This will verify if the search product is displayed in the Page</doc>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${searchResult_AllResult}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:15.524" endtime="20200409 17:36:15.545"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:17.547" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:15.545" endtime="20200409 17:36:17.547"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:15.524" endtime="20200409 17:36:17.547"></status>
+</kw>
+<doc>This will search the product and it should be redirect to the Search Result Page</doc>
+<status status="PASS" starttime="20200409 17:35:23.302" endtime="20200409 17:36:17.548" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Selecting Product and Verify it's Details">
+<kw name="Select Product in Search Results" library="scenarioSearchResults">
+<doc>This will select the product in Search Result page
+and open it on Product Details Page</doc>
+<arguments>
+<arg>${productTitle}</arg>
+<arg>${productPrice}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@class='a-section a-spacing-medium' and contains(.,'${productTitle}') and contains(.,'${productPrice}')]</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:17.568" endtime="20200409 17:36:17.610"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@class='a-section a-spacing-medium' and contains(.,'${productTitle}') and contains(.,'${productPrice}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:17.610" level="INFO">Clicking element '//div[@class='a-section a-spacing-medium' and contains(.,'Daily Face Cover (Pack of 10)') and contains(.,'$19.95')]'.</msg>
+<status status="PASS" starttime="20200409 17:36:17.610" endtime="20200409 17:36:22.487"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:24.491" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:22.488" endtime="20200409 17:36:24.491"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:17.566" endtime="20200409 17:36:24.491"></status>
+</kw>
+<kw name="Verify if the Product selected opens" library="scenarioProductDetails">
+<doc>This will open the product selected in Product Details Page</doc>
+<arguments>
+<arg>${productTitle}</arg>
+<arg>${productPrice}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//span[@id='productTitle' and contains(.,'${productTitle}')]</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:24.492" endtime="20200409 17:36:24.521"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='price']//span[@id='priceblock_ourprice' and contains(.,'${productPrice}')]</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:24.521" endtime="20200409 17:36:24.544"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.545" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:24.544" endtime="20200409 17:36:26.546"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:24.492" endtime="20200409 17:36:26.546"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>@{productFeatures}</arg>
+</arguments>
+<assign>
+<var>${productFeatures}</var>
+</assign>
+<msg timestamp="20200409 17:36:26.547" level="INFO">${productFeatures} = ['Pack of 10', '52% Cotton 48% Polyester', 'Made in the USA or Imported', 'Not intended for medical use', 'Not FDA-approved', 'Machine washable', 'Soft and lightweight jersey fabric', 'Two earholes to...</msg>
+<status status="PASS" starttime="20200409 17:36:26.547" endtime="20200409 17:36:26.547"></status>
+</kw>
+<kw name="${productFeatures} IN ZIP [ ${productFeatures} ]" type="for">
+<kw name="${productFeatures} = Pack of 10" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.584" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Pack of 10')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.549" endtime="20200409 17:36:26.585"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.549" endtime="20200409 17:36:26.585"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.548" endtime="20200409 17:36:26.585"></status>
+</kw>
+<kw name="${productFeatures} = 52% Cotton 48% Polyester" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.624" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'52% Cotton 48% Polyester')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.586" endtime="20200409 17:36:26.624"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.586" endtime="20200409 17:36:26.624"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.585" endtime="20200409 17:36:26.624"></status>
+</kw>
+<kw name="${productFeatures} = Made in the USA or Imported" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.660" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Made in the USA or Imported')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.625" endtime="20200409 17:36:26.661"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.625" endtime="20200409 17:36:26.661"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.624" endtime="20200409 17:36:26.661"></status>
+</kw>
+<kw name="${productFeatures} = Not intended for medical use" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.694" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Not intended for medical use')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.662" endtime="20200409 17:36:26.694"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.661" endtime="20200409 17:36:26.694"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.661" endtime="20200409 17:36:26.694"></status>
+</kw>
+<kw name="${productFeatures} = Not FDA-approved" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.727" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Not FDA-approved')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.695" endtime="20200409 17:36:26.728"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.695" endtime="20200409 17:36:26.728"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.695" endtime="20200409 17:36:26.728"></status>
+</kw>
+<kw name="${productFeatures} = Machine washable" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.760" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Machine washable')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.729" endtime="20200409 17:36:26.760"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.729" endtime="20200409 17:36:26.761"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.728" endtime="20200409 17:36:26.761"></status>
+</kw>
+<kw name="${productFeatures} = Soft and lightweight jersey fabric" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.794" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Soft and lightweight jersey fabric')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.762" endtime="20200409 17:36:26.794"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.761" endtime="20200409 17:36:26.794"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.761" endtime="20200409 17:36:26.795"></status>
+</kw>
+<kw name="${productFeatures} = Two earholes to accommodate a variety of face and head sizes" type="foritem">
+<kw name="Verify if the Features of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product features are all displayed</doc>
+<arguments>
+<arg>${productFeatures}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@id='feature-bullets']//span[contains(.,'${productFeatures}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.830" level="INFO">Element '//div[@id='feature-bullets']//span[contains(.,'Two earholes to accommodate a variety of face and head sizes')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.796" endtime="20200409 17:36:26.830"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.795" endtime="20200409 17:36:26.830"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.795" endtime="20200409 17:36:26.830"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.548" endtime="20200409 17:36:26.830"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>@{productSpecsTitle}</arg>
+</arguments>
+<assign>
+<var>${productSpecsTitle}</var>
+</assign>
+<msg timestamp="20200409 17:36:26.832" level="INFO">${productSpecsTitle} = ['Brand Name', 'Color', 'Ean', 'Number of Items', 'Part Number', 'Size', 'UNSPSC Code', 'UPC']</msg>
+<status status="PASS" starttime="20200409 17:36:26.831" endtime="20200409 17:36:26.832"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>@{productSpecsValue}</arg>
+</arguments>
+<assign>
+<var>${productSpecsValue}</var>
+</assign>
+<msg timestamp="20200409 17:36:26.833" level="INFO">${productSpecsValue} = ['Bella Canvas', 'Black', '0884913729049', '10', 'ST123', 'One Size', '41000000', '884913729049']</msg>
+<status status="PASS" starttime="20200409 17:36:26.832" endtime="20200409 17:36:26.833"></status>
+</kw>
+<kw name="${productSpecsTitle} | ${productSpecsValue} IN ZIP [ ${productSpecsTitle} | ${productSpecsValue} ]" type="for">
+<kw name="${productSpecsTitle} = Brand Name, ${productSpecsValue} = Bella Canvas" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.867" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'Brand Name') and contains(.,'Bella Canvas')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.834" endtime="20200409 17:36:26.868"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.834" endtime="20200409 17:36:26.868"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.833" endtime="20200409 17:36:26.868"></status>
+</kw>
+<kw name="${productSpecsTitle} = Color, ${productSpecsValue} = Black" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.902" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'Color') and contains(.,'Black')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.869" endtime="20200409 17:36:26.902"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.869" endtime="20200409 17:36:26.902"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.868" endtime="20200409 17:36:26.902"></status>
+</kw>
+<kw name="${productSpecsTitle} = Ean, ${productSpecsValue} = 0884913729049" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.936" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'Ean') and contains(.,'0884913729049')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.903" endtime="20200409 17:36:26.936"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.903" endtime="20200409 17:36:26.936"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.902" endtime="20200409 17:36:26.936"></status>
+</kw>
+<kw name="${productSpecsTitle} = Number of Items, ${productSpecsValue} = 10" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:26.969" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'Number of Items') and contains(.,'10')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.937" endtime="20200409 17:36:26.969"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.937" endtime="20200409 17:36:26.970"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.936" endtime="20200409 17:36:26.970"></status>
+</kw>
+<kw name="${productSpecsTitle} = Part Number, ${productSpecsValue} = ST123" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.002" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'Part Number') and contains(.,'ST123')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:26.971" endtime="20200409 17:36:27.003"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.970" endtime="20200409 17:36:27.003"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.970" endtime="20200409 17:36:27.003"></status>
+</kw>
+<kw name="${productSpecsTitle} = Size, ${productSpecsValue} = One Size" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.036" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'Size') and contains(.,'One Size')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:27.004" endtime="20200409 17:36:27.037"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.003" endtime="20200409 17:36:27.037"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.003" endtime="20200409 17:36:27.037"></status>
+</kw>
+<kw name="${productSpecsTitle} = UNSPSC Code, ${productSpecsValue} = 41000000" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.070" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'UNSPSC Code') and contains(.,'41000000')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:27.038" endtime="20200409 17:36:27.070"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.037" endtime="20200409 17:36:27.070"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.037" endtime="20200409 17:36:27.070"></status>
+</kw>
+<kw name="${productSpecsTitle} = UPC, ${productSpecsValue} = 884913729049" type="foritem">
+<kw name="Verify if the Product Specifications of the Product is displayed" library="scenarioProductDetails">
+<doc>This will verify if the product specifications are all displayed</doc>
+<arguments>
+<arg>${productSpecsTitle}</arg>
+<arg>${productSpecsValue}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//table[@id='product-specification-table']//tr[contains(.,'${productSpecsTitle}') and contains(.,'${productSpecsValue}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.103" level="INFO">Element '//table[@id='product-specification-table']//tr[contains(.,'UPC') and contains(.,'884913729049')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:27.071" endtime="20200409 17:36:27.103"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.071" endtime="20200409 17:36:27.103"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.071" endtime="20200409 17:36:27.103"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:26.833" endtime="20200409 17:36:27.103"></status>
+</kw>
+<doc>This will verify the details of the selected Products</doc>
+<status status="PASS" starttime="20200409 17:36:17.564" endtime="20200409 17:36:27.104" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Add Item to the Cart">
+<kw name="Setting Product Quantity" library="scenarioProductDetails">
+<doc>This will set the quantity to be bought</doc>
+<arguments>
+<arg>${quantity}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${productdetails_dropdownquantity}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:27.108" endtime="20200409 17:36:27.145"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${productdetails_dropdownquantity}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.146" level="INFO">Clicking element '//span[@id='a-autoid-0-announce']'.</msg>
+<status status="PASS" starttime="20200409 17:36:27.146" endtime="20200409 17:36:27.328"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//li[contains(@aria-labelledby,'quantity') and contains(.,'${quantity}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.329" level="INFO">Clicking element '//li[contains(@aria-labelledby,'quantity') and contains(.,'4')]'.</msg>
+<status status="PASS" starttime="20200409 17:36:27.329" endtime="20200409 17:36:27.560"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.107" endtime="20200409 17:36:27.560"></status>
+</kw>
+<kw name="Add to Cart" library="scenarioProductDetails">
+<doc>This will add the product to the Cart</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${productDetails_buttonAddToCart}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:27.561" endtime="20200409 17:36:27.598"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${productDetails_buttonAddToCart}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:27.598" level="INFO">Clicking element '//input[@id='add-to-cart-button']'.</msg>
+<status status="PASS" starttime="20200409 17:36:27.598" endtime="20200409 17:36:29.189"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="Selenium2Library">
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<arguments>
+<arg>${productDetails_buttonAddToCart}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:29.190" endtime="20200409 17:36:29.271"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:31.272" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:29.271" endtime="20200409 17:36:31.272"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:27.561" endtime="20200409 17:36:31.273"></status>
+</kw>
+<kw name="Verify if the added Product Quantity and Total Price is Correct" library="scenarioProductDetails">
+<doc>This will verify if the Total Price is correct and quantity</doc>
+<arguments>
+<arg>${productPrice}</arg>
+<arg>${totalPrice}</arg>
+<arg>${quantity}</arg>
+</arguments>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${productprice}</arg>
+<arg>,</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${productPrice}</var>
+</assign>
+<msg timestamp="20200409 17:36:31.278" level="INFO">${productPrice} = 19.95</msg>
+<status status="PASS" starttime="20200409 17:36:31.276" endtime="20200409 17:36:31.278"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${quantity} * ${productPrice}</arg>
+</arguments>
+<assign>
+<var>${computedTotalPrice}</var>
+</assign>
+<msg timestamp="20200409 17:36:31.279" level="INFO">${computedTotalPrice} = 79.8</msg>
+<status status="PASS" starttime="20200409 17:36:31.278" endtime="20200409 17:36:31.280"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${totalPrice}</arg>
+<arg>${computedTotalPrice}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:31.281" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'float'&gt;</msg>
+<status status="PASS" starttime="20200409 17:36:31.280" endtime="20200409 17:36:31.281"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[contains(@id,'order-row-with-divider') and contains(.,'Added to Cart')]//span[contains(@class,'price') and contains(.,'${totalPrice}')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:31.353" level="INFO">Element '//div[contains(@id,'order-row-with-divider') and contains(.,'Added to Cart')]//span[contains(@class,'price') and contains(.,'79.8')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:31.282" endtime="20200409 17:36:31.353"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[contains(@id,'order-row-with-divider') and contains(.,'Added to Cart')]//span[contains(@class,'subtotal') and contains(.,'${quantity} item')]</arg>
+</arguments>
+<msg timestamp="20200409 17:36:31.376" level="INFO">Element '//div[contains(@id,'order-row-with-divider') and contains(.,'Added to Cart')]//span[contains(@class,'subtotal') and contains(.,'4 item')]' is displayed.</msg>
+<status status="PASS" starttime="20200409 17:36:31.353" endtime="20200409 17:36:31.376"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:31.274" endtime="20200409 17:36:31.376"></status>
+</kw>
+<doc>This will add the product to the cart
+Verify if the item is successfully added in the Shopping Cart
+And if the price and quantity is correct</doc>
+<status status="PASS" starttime="20200409 17:36:27.106" endtime="20200409 17:36:31.376" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Confirming Item Added in Shopping Cart">
+<kw name="Go to Shopping Cart Page" library="scenarioHomepage">
+<doc>This will go to the shopping Cart page</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${homepage_iconcart}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:31.379" endtime="20200409 17:36:31.417"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${homepage_iconcart}</arg>
+</arguments>
+<msg timestamp="20200409 17:36:31.418" level="INFO">Clicking element '//div[@id='nav-tools']//a[@id='nav-cart']'.</msg>
+<status status="PASS" starttime="20200409 17:36:31.417" endtime="20200409 17:36:33.592"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${shoppingCart_textShoppingCart}</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:33.592" endtime="20200409 17:36:33.633"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:31.379" endtime="20200409 17:36:33.633"></status>
+</kw>
+<kw name="Verify Items in Shopping Cart" library="scenarioHomepage">
+<doc>This will verify if the item is added in the Shopping Cart Page</doc>
+<arguments>
+<arg>${producttitle}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//div[@class='sc-list-item-content' and contains(.,'${productTitle}')]</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20200409 17:36:33.634" endtime="20200409 17:36:33.657"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:35.658" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:33.657" endtime="20200409 17:36:35.658"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:33.634" endtime="20200409 17:36:35.658"></status>
+</kw>
+<doc>This will verify if the item is confirm added to Shopping Cart</doc>
+<status status="PASS" starttime="20200409 17:36:31.378" endtime="20200409 17:36:35.658" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Ending Script Execution">
+<kw name="Closing Browser" library="scenarioHomepage">
+<doc>This will close the browser open</doc>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200409 17:36:37.663" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200409 17:36:35.661" endtime="20200409 17:36:37.663"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200409 17:36:37.663" endtime="20200409 17:36:40.001"></status>
+</kw>
+<status status="PASS" starttime="20200409 17:36:35.661" endtime="20200409 17:36:40.001"></status>
+</kw>
+<doc>This will close all the browser and end the script execution</doc>
+<status status="PASS" starttime="20200409 17:36:35.660" endtime="20200409 17:36:40.003" critical="yes"></status>
+</test>
+<doc>This script will search a product
+and add it to cart and verify if the item was successfully added to the cart</doc>
+<status status="PASS" starttime="20200409 17:35:22.901" endtime="20200409 17:36:40.008"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="FT-AZ001 SearchProductAddToCart">FT-AZ001 SearchProductAddToCart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
