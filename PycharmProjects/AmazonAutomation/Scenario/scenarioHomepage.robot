@@ -9,7 +9,7 @@ Open Amazon Homepage
     [Documentation]    This will open a browser and Amazon Homepage
     Open Browser    ${test_envi}    ${browser}
     Maximize Browser Window
-    Wait Until Page Contains Element    ${homepage_amazonlogo}    timeout=60
+    Wait Until Page Contains Element    ${homepage_amazonlogo}     timeout=60
     #Assertions
     sleep    3
     element should be visible    ${homepage_inputsearch}
@@ -21,7 +21,7 @@ Open Amazon Homepage
 Search Products
     [Arguments]    ${product}
     [Documentation]    This will search a product
-    wait until element is visible    ${homepage_inputsearch}    timeout=60
+    wait until element is visible   ${homepage_inputsearch}    timeout=60
     click element    ${homepage_inputsearch}
     sleep    1
     input text    ${homepage_inputsearch}    text=${product}

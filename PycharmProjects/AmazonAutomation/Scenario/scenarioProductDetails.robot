@@ -3,7 +3,7 @@ Documentation  This is all the list of all scenarios that can be found or made i
 ...  This file also calls the needed objects for the Product Details Page
 Resource          ../Config/Setup.robot  #For the Environment and Libraries
 Resource          ../Objects/ProductDetails/objectProductDetails.robot
-Library  Selenium2Library
+
 *** Keywords ***
 Verify if the Product selected opens
     [Documentation]  This will open the product selected in Product Details Page
