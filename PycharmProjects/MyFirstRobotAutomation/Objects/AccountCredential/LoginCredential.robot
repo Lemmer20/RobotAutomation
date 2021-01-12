@@ -5,4 +5,4 @@ Documentation   objects found in login page
 ${login_button}     //a[@class='ico-login']
 ${email}    //input[@id='Email']
 ${password}     //input[@id='Password']
-${login_button}     //input[@class='button-1 login-button']
+${login_button_2}     //input[@class='button-1 login-button']

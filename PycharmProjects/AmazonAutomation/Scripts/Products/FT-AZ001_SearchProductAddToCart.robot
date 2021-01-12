@@ -32,7 +32,7 @@ Selecting Product and Verify it's Details
     #@{productspecstitle}  @{productspecsvalue}
     \   Verify if the Product Specifications of the Product is displayed  ${productSpecsTitle}  ${productSpecsValue}
     #${quantity}
-
+Search Products
 Add Item to the Cart
     [Documentation]  This will add the product to the cart
     ...  Verify if the item is successfully added in the Shopping Cart
